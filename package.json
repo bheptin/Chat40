@@ -1,5 +1,5 @@
 {
-  "name": "Chat40",
+  "name": "chat40",
   "version": "0.0.1",
   "private": true,
   "scripts": {
@@ -20,5 +20,17 @@
   },
   "jest": {
     "preset": "react-native"
-  }
+  },
+  "description": "",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bheptin/Chat40.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bheptin/Chat40/issues"
+  },
+  "homepage": "https://github.com/bheptin/Chat40#readme"
 }

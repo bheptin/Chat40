@@ -14,11 +14,11 @@ import Home from './src/Home.js';
 type Props = {};
 
   const Routes = StackNavigator({
-    Home: {
+    Splash: {
       screen: Splash, 
     },
-    Login: {
-      screen: Login,
+    HomeScreen: {
+      screen: Home,
     },
       initialRouteName: 'Splash',
   })

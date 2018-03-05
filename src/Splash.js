@@ -9,9 +9,8 @@ export default class Splash extends Component {
               <Text style={styles.title}>Chat40</Text>
             </View>
             <Button
-              title="Login"
-              onPress={() => this.props.navigation.navigate('Login')} />
-
+              title="Home"
+              onPress={() => this.props.navigation.navigate('HomeScreen')} />
               <Text style={styles.subtitle}>For the life of the party</Text>
           </View>
         )
