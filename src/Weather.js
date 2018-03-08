@@ -1,12 +1,15 @@
 import React, { Component } from 'react';
+import axios from 'axios';
 import { Platform, StyleSheet, Text, StatusBar, Button, Image,
         View, TextInput, TouchableOpacity, Dimensions } from 'react-native';
-import axios from 'axios';
 
-const API_KEY= "4a413b11af3afb22";
+
+
+const API_KEY = "4a413b11af3afb22";
 const DEFAULT_ZIPCODE = 28803;
 
 export default class Weather extends Component {
+
   constructor() {
     super();
     this.state = {
@@ -14,17 +17,15 @@ export default class Weather extends Component {
       days: [],
     }
   }
+
   _getForecast(zipcode) {
     const request_url = "http://api.wunderground.com/api/" + API_KEY + "/forecast/q/" + zipcode + ".json";
     axios.get(request_url).then( (response) => {
-      if (response == 200) {
-        console.log(response);
-        const weather = response.data.forecast.simpleforecast.forecastday;
-        const forecast = [];
+      if ( response.status == 200 ) {
+        console.log(response.data);
+        var weather = response.data.forecast.simpleforecast.forecastday;
+        var forecast = [];
         weather.forEach( (element, index) => {
-          //forecast is equal to a new forecast as an array being iterated over
-          //to create a new array of keys and values. Loads one time instead
-          //of 4 seperate times, one for current day and one for next 3 days
           forecast = forecast.concat([
             {
               date: element.date.weekday,
@@ -33,6 +34,11 @@ export default class Weather extends Component {
                   high:
                   {
                     fahrenheit: element.high.fahrenheit,
+                    celsius: element.high.celsius
+                  },
+                  low:
+                  {
+                    fahrenheit: element.low.fahrenheit,
                     celsius: element.low.celsius
                   }
                 },
@@ -58,7 +64,7 @@ render () {
   if (this.state.days.length <= 0 ) {
       this._getForecast(this.state.zipcode);
     }
-
+    console.log(response.data);
     return(
       <View style={styles.container}>
         {
@@ -66,7 +72,7 @@ render () {
             return (
               <View key={index} style={{marginTop: 10, borderWidth: 2, justifyContent: 'center', alignItems: 'center', backgroundColor: 'white', width: Dimensions.get('window').width / 1.25}}>
                 <Image style={{width: 50, height: 50}}
-                  source={{url: element.icon_url}} />
+                  source={{uri: element.icon_url}} />
                   <Text>{element.conditions}</Text>
                   <Text>High{element.temperature.high.fahrenheit}F | {element.temperature.high.celsius}C</Text>
                   <Text>Low{element.temperature.low.fahrenheit}F | {element.temperature.low.celsius}C</Text>
@@ -83,9 +89,10 @@ render () {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 0.9,
+    flex: 1,
+    justifyContent: 'center',
     alignItems: 'center',
     padding: 20,
     backgroundColor: '#1da6cf',
-  }
-})
+  },
+});

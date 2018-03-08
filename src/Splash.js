@@ -15,6 +15,7 @@ export default class Splash extends Component {
   };
     render() {
         return (
+        
           <View style={styles.wrapper}>
             <View style={styles.titleWrap}>
               <Text style={styles.title}>Chat40</Text>

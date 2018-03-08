@@ -9,7 +9,6 @@ import ToDo from './src/ToDo.js';
 import Weather from './src/Weather.js';
 
 
-
 type Props = {};
 
   const Routes = StackNavigator({
