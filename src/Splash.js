@@ -10,7 +10,7 @@ export default class Splash extends Component {
     headerTintColor: 'white',
     headerTitleStyle: {
       fontWeight: 'bold',
-      fontFamily: 'Chalkboard SE',
+      fontFamily: 'Apple Color Emoji',
     }
   };
     render() {

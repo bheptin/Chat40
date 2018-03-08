@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Platform, StyleSheet, Text, StatusBar, Button,
-        View, TextInput, TouchableOpacity } from 'react-native';
+        View, TextInput, TouchableOpacity, Image } from 'react-native';
 
 
 export default class Home extends Component {
@@ -12,7 +12,7 @@ export default class Home extends Component {
     headerTintColor: 'white',
     headerTitleStyle: {
       fontWeight: 'bold',
-      fontFamily: 'Chalkboard SE',
+      fontFamily: 'Apple Color Emoji',
     }
   };
   
@@ -22,15 +22,18 @@ export default class Home extends Component {
         <Text style={styles.welcome}>Welcome to the Party! Here you can find the schedule
               for the weekend, Find out whose coming, and what the 
               weather will be like!</Text>
-        <Button title="Things to do"
+        <Button title="Itinerary"
         onPress={() => this.props.navigation.navigate('ToDoScreen')} />
+        <Button title="Weather"
+        onPress={() => this.props.navigation.navigate('WeatherScreen')} />
+        <Image source={require('./images/BillyWedding.jpg')} style={{width:200, height: 200 }}/>
       </View>
     )
   }
 }
 const styles = StyleSheet.create({
   container: {
-    flex: 0,
+    flex: 0.9,
     justifyContent: 'flex-start',
     alignItems: 'center',
     padding: 20,

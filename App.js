@@ -6,6 +6,9 @@ import LoginForm from './src/LoginForm.js';
 import Login from './src/Login.js';
 import Home from './src/Home.js';
 import ToDo from './src/ToDo.js';
+import Weather from './src/Weather.js';
+
+
 
 type Props = {};
 
@@ -19,8 +22,12 @@ type Props = {};
     ToDoScreen: {
       screen: ToDo,
     },
+    WeatherScreen: {
+      screen: Weather, 
+    },
       initialRouteName: 'Splash',
   });
+
 
 export default class App extends Component<Props> {
   render() {
