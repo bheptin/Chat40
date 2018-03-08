@@ -2,6 +2,17 @@ import React, { Component } from 'react';
 import { Button, Platform, StyleSheet, Text, View } from 'react-native';
 
 export default class Splash extends Component {
+  static navigationOptions = {
+    title: 'Splash',
+    headerStyle: {
+      backgroundColor: '#778ca3',
+    },
+    headerTintColor: 'white',
+    headerTitleStyle: {
+      fontWeight: 'bold',
+      fontFamily: 'Chalkboard SE',
+    }
+  };
     render() {
         return (
           <View style={styles.wrapper}>
