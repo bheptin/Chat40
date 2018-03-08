@@ -1,11 +1,6 @@
 import React, { Component } from 'react';
 import { StackNavigator } from 'react-navigation';
-import {
-  Platform,
-  StyleSheet,
-  Text,
-  View
-} from 'react-native';
+import { Platform, StyleSheet, Text, View } from 'react-native';
 import Splash from './src/Splash.js';
 import LoginForm from './src/LoginForm.js';
 import Login from './src/Login.js';
