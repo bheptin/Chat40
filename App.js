@@ -5,7 +5,7 @@ import Splash from './src/Splash.js';
 import LoginForm from './src/LoginForm.js';
 import Login from './src/Login.js';
 import Home from './src/Home.js';
-import ToDo from './src/ToDo.js';
+import Itinerary from './src/Itinerary.js';
 import Weather from './src/Weather.js';
 
 
@@ -18,8 +18,8 @@ type Props = {};
     HomeScreen: {
       screen: Home,
     },
-    ToDoScreen: {
-      screen: ToDo,
+    ItineraryScreen: {
+      screen: Itinerary,
     },
     WeatherScreen: {
       screen: Weather, 

@@ -23,10 +23,10 @@ export default class Home extends Component {
               for the weekend, Find out whose coming, and what the 
               weather will be like!</Text>
         <Button title="Itinerary"
-        onPress={() => this.props.navigation.navigate('ToDoScreen')} />
+        onPress={() => this.props.navigation.navigate('ItineraryScreen')} />
         <Button title="Weather"
         onPress={() => this.props.navigation.navigate('WeatherScreen')} />
-        <Image source={require('./images/BillyWedding.jpg')} style={{width:200, height: 200 }}/>
+        <Image source={require('./images/BillyWedding.jpg')} style={{width:200, height: 100, alignItems: 'center', flex: .8 }}/>
       </View>
     )
   }

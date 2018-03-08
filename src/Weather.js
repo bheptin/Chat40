@@ -18,8 +18,9 @@ export default class Weather extends Component {
     }
   }
 
+
   _getForecast(zipcode) {
-    const request_url = "http://api.wunderground.com/api/" + API_KEY + "/forecast/q/" + zipcode + ".json";
+    var request_url = "https://api.wunderground.com/api/" + API_KEY + "/forecast/q/" + zipcode + ".json";
     axios.get(request_url).then( (response) => {
       if ( response.status == 200 ) {
         console.log(response.data);
@@ -53,11 +54,9 @@ export default class Weather extends Component {
             }
           ]);
         });
-        this.setState({days: forecast});
+          this.setState({days: forecast});
       }
-    }).catch( (error) => {
-      console.log(error);
-    });
+    })
   }
 
 render () {
@@ -70,7 +69,7 @@ render () {
         {
           this.state.days.map( (element, index) => {
             return (
-              <View key={index} style={{marginTop: 10, borderWidth: 2, justifyContent: 'center', alignItems: 'center', backgroundColor: 'white', width: Dimensions.get('window').width / 1.25}}>
+              <View key={index} style={styles.weatherMap}>
                 <Image style={{width: 50, height: 50}}
                   source={{uri: element.icon_url}} />
                   <Text>{element.conditions}</Text>
@@ -95,4 +94,12 @@ const styles = StyleSheet.create({
     padding: 20,
     backgroundColor: '#1da6cf',
   },
+  weatherMap: {
+    marginTop: 10,
+    borderWidth: 2,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: 'white',
+    width: Dimensions.get('window').width / 1.25,
+  }
 });
