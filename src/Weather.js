@@ -4,7 +4,6 @@ import { Platform, StyleSheet, Text, StatusBar, Button, Image,
         View, TextInput, TouchableOpacity, Dimensions } from 'react-native';
 
 
-
 const API_KEY = "4a413b11af3afb22";
 const DEFAULT_ZIPCODE = 28803;
 
@@ -49,10 +48,18 @@ export default class Weather extends Component {
             }
           ]);
         });
-          this.setState({days: forecast});
-      }
-    })
+        this.setState({days: forecast});
+        }
+      }).catch( (error) => {
+        console.log(error);
+    });
   }
+
+
+
+
+
+
 
 render () {
   if (this.state.days.length <= 0 ) {

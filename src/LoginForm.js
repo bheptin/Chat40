@@ -8,7 +8,6 @@ import GoBackButton from './GoBackButton.js';
       return(
         <View style={styles.container}>
         <StatusBar barStyle="light-content" />
-          <GoBackButton />
           <TextInput
           placeholder="email"
           placeholderTextColor="rgba(225,225,225,0.7)"

@@ -26,7 +26,6 @@ export default class Home extends Component {
         onPress={() => this.props.navigation.navigate('ItineraryScreen')} />
         <Button title="Weather"
         onPress={() => this.props.navigation.navigate('WeatherScreen')} />
-        <Image source={require('./images/BillyWedding.jpg')} style={{width:200, height: 100, alignItems: 'center', flex: .8 }}/>
       </View>
     )
   }
