@@ -6,16 +6,7 @@ import { Platform, StyleSheet, Text, StatusBar, Button,
 
 
 export default class Itinerary extends Component {
-  constructor() {
-    super();
-    checked: false
-  }
-  
-  press = () => {
-    this.setState((state) => ({ 
-      checked: !state.checked,
-    }));
-  }
+
   
   static navigationOptions = {
     title: 'Itinerary',
@@ -34,13 +25,6 @@ export default class Itinerary extends Component {
     <View style={styles.itinerarycontainer}>  
       <Text style={styles.itineraryText}>Here is a list of things we have planned,
        check the ones you want to attend, enter your name and submit</Text>
-      <ListItem
-        title={
-          <CheckBox title="Click Here!"
-            onPress={this.press}
-            checked={this.state.checked} />
-          }
-        />
         
       <View >
         <TextInput

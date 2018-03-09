@@ -5,16 +5,8 @@ import { Platform, StyleSheet, Text, StatusBar, Button,
 
 export default class Home extends Component {
   static navigationOptions = {
-    title: 'Home',
-    headerStyle: {
-      backgroundColor: '#778ca3',
-    },
-    headerTintColor: 'white',
-    headerTitleStyle: {
-      fontWeight: 'bold',
-      fontFamily: 'Apple Color Emoji',
-    }
-  };
+    header: null
+  }
   
   render () {
     return(
@@ -32,8 +24,8 @@ export default class Home extends Component {
 }
 const styles = StyleSheet.create({
   container: {
-    flex: 0.9,
-    justifyContent: 'flex-start',
+    flex: 1,
+    justifyContent: 'center',
     alignItems: 'center',
     padding: 20,
     backgroundColor: '#1da6cf',

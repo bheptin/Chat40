@@ -65,14 +65,13 @@ render () {
   if (this.state.days.length <= 0 ) {
       this._getForecast(this.state.zipcode);
     }
-    console.log(response.data);
     return(
       <View style={styles.container}>
         {
           this.state.days.map( (element, index) => {
             return (
               <View key={index} style={styles.weatherMap}>
-                <Image style={{width: 50, height: 50}}
+                <Image style={{width: 30, height: 30}}
                   source={{uri: element.icon_url}} />
                   <Text>{element.conditions}</Text>
                   <Text>High{element.temperature.high.fahrenheit}F | {element.temperature.high.celsius}C</Text>
