@@ -9,7 +9,6 @@ const API_KEY = "4a413b11af3afb22";
 const DEFAULT_ZIPCODE = 28803;
 
 export default class Weather extends Component {
-
   constructor() {
     super();
     this.state = {
@@ -21,32 +20,28 @@ export default class Weather extends Component {
 
   _getForecast(zipcode) {
     var request_url = "https://api.wunderground.com/api/" + API_KEY + "/forecast/q/" + zipcode + ".json";
-    axios.get(request_url).then( (response) => {
+    axios.get(request_url)
+    .then( (response) => {
       if ( response.status == 200 ) {
         console.log(response.data);
         var weather = response.data.forecast.simpleforecast.forecastday;
         var forecast = [];
         weather.forEach( (element, index) => {
           forecast = forecast.concat([
-            {
-              date: element.date.weekday,
+            { date: element.date.weekday,
               temperature:
-                {
-                  high:
-                  {
-                    fahrenheit: element.high.fahrenheit,
+                { high:
+                  { fahrenheit: element.high.fahrenheit,
                     celsius: element.high.celsius
                   },
                   low:
-                  {
-                    fahrenheit: element.low.fahrenheit,
+                  { fahrenheit: element.low.fahrenheit,
                     celsius: element.low.celsius
                   }
                 },
                 conditions: element.conditions,
                 wind:
-                {
-                  mph: element.avewind.mph,
+                { mph: element.avewind.mph,
                   dir: element.avewind.dir
                 },
                 average_humidity: element.avehumidity,

@@ -3,16 +3,9 @@ import { Button, Platform, StyleSheet, Text, View } from 'react-native';
 
 export default class Splash extends Component {
   static navigationOptions = {
-    title: 'Splash',
-    headerStyle: {
-      backgroundColor: '#778ca3',
-    },
-    headerTintColor: 'white',
-    headerTitleStyle: {
-      fontWeight: 'bold',
-      fontFamily: 'Apple Color Emoji',
-    }
-  };
+    header: null
+  }
+
     render() {
         return (
         
